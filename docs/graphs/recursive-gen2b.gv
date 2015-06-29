@@ -1,0 +1,11 @@
+graph g {
+  subgraph vars {
+    style=invis;
+
+    subgraph cluster_foobar {
+      a [label="foo::tmp\nfoo::v\nbar::v"]
+
+      a -- a
+    }
+  }
+}

@@ -1,0 +1,19 @@
+graph g {
+  subgraph vars {
+    style=invis;
+
+    subgraph cluster_foo {
+      "foo::tmp" -- "foo::v"
+    }
+    subgraph cluster_bar {
+      "bar::v"
+    }
+  }
+
+  subgraph aliases {
+    edge [style="dashed"];
+
+    "foo::tmp" -- "bar::v"
+    "bar::v" -- "foo::v"
+  }
+}

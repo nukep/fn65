@@ -1,0 +1,20 @@
+// Multiplies the accumulator by 10, or a*8 + a*2, or a<<3 + a<<1.
+pub fn mul_by_10(value: A) -> A {
+    value = value << 1;
+
+    let tmp: u8 <- zp;
+    tmp = value;
+
+    (value << 2) + tmp
+}
+
+/*
+mul_by_10:
+    ASL
+    STA tmp
+    ASL
+    ASL
+    CLC
+    ADC tmp
+    RTS
+*/

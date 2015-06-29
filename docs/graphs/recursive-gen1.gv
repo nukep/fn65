@@ -1,0 +1,29 @@
+graph g {
+  subgraph cluster_functions {
+    style=filled;
+    color=lightgrey;
+    node [shape="box", style=filled, color="white"];
+    label = "functions";
+
+    "foo"
+    "bar"
+  }
+
+  subgraph vars {
+    style=invis;
+    subgraph cluster_foo {
+      "foo" -- "foo::v"
+      "foo" -- "foo::tmp"
+    }
+    subgraph cluster_bar {
+      "bar" -- "bar::v"
+    }
+  }
+
+  subgraph aliases {
+    edge [style="dashed"];
+
+    "foo::tmp" -- "bar::v"
+    "bar::v" -- "foo::v"
+  }
+}

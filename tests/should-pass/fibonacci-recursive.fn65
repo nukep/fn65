@@ -1,0 +1,17 @@
+// 1 1 2 3 5 8 13...
+// #[invariant(X)]
+pub fn fibonacci(n: X) -> A {
+    if n > 2 {
+        let tmp1: u8 <- stack;
+        let tmp2: u8 <- zp;
+        n = n - 1;
+        tmp1 = fibonacci(n);
+        n = n - 1;
+        tmp2 = fibonacci(n);
+        n = n + 2;
+
+        tmp1:A + tmp2
+    } else {
+        1:A
+    }
+}

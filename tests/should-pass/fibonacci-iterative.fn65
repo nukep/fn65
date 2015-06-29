@@ -1,0 +1,14 @@
+// 1 1 2 3 5 8 13...
+pub fn fibonacci(n: Y) -> A {
+    let prev_sum: u8 <- zp = 0:A;
+    let sum: A = 1;
+
+    tozero n {
+        let tmp: X = sum:X;
+
+        sum = sum + prev_sum;
+        prev_sum = tmp;
+    }
+
+    sum
+}

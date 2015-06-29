@@ -1,0 +1,10 @@
+graph g {
+rank="TB";
+  subgraph vars {
+    style=invis;
+    subgraph cluster_fibonacci {
+      a [label="fibonacci::tmp"]
+      a -- a
+    }
+  }
+}

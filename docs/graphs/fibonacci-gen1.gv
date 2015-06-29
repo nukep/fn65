@@ -1,0 +1,23 @@
+graph g {
+rank="TB";
+  subgraph cluster_functions {
+    style=filled;
+    color=lightgrey;
+    node [shape="box", style=filled, color="white"];
+    label = "functions";
+
+    "fibonacci"
+  }
+
+  subgraph vars {
+    style=invis;
+    subgraph cluster_fibonacci {
+      "fibonacci" -- "fibonacci::tmp"
+      "fibonacci" -- "fibonacci::tmp"
+    }
+  }
+
+  subgraph aliases {
+    edge [style="dashed"];
+  }
+}
